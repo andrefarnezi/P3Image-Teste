@@ -1,0 +1,45 @@
+﻿@model IEnumerable<P3Image_Teste.Administracao.Models.SubCategoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Nova SubCategoria", "Incluir")
+</p>
+<table>
+    <tr>
+         <th>
+            Categoria
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slug)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+           <td>
+            @Html.DisplayFor(modelItem => item.categoria.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.slug)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.subCategoriaId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.subCategoriaId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.subCategoriaId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,29 @@
+﻿@model P3Image_Teste.Administracao.Models.Categoria
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Categoria</legend>
+
+    <div class="display-label">
+         <b>Descrição:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descricao)
+    </div>
+
+    <div class="display-label">
+        <b>Slug:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.slug)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.categoriaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

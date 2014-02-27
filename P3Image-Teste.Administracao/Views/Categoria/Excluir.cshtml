@@ -1,0 +1,33 @@
+﻿@model P3Image_Teste.Administracao.Models.Categoria
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você deseja deletar este registro?</h3>
+<fieldset>
+    <legend>Categoria</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.categoriaId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descricao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.slug)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.slug)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Deletar" /> |
+        @Html.ActionLink("Voltar para Index", "Index")
+    </p>
+}

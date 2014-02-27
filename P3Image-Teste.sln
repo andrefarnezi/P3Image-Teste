@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Admin.Tests", "P3Image-Teste.Admin.Tests\P3Image-Teste.Admin.Tests.csproj", "{3D450F40-4EE4-4B5D-831D-09F586E5D9E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Infra", "P3Image-Teste.Infra\P3Image-Teste.Infra.csproj", "{87C158E0-0229-4B87-9BA8-152E644701E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Administracao", "P3Image-Teste.Administracao\P3Image-Teste.Administracao.csproj", "{207504D6-F2FD-41EA-ADB2-89B637EF9D79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D450F40-4EE4-4B5D-831D-09F586E5D9E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D450F40-4EE4-4B5D-831D-09F586E5D9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D450F40-4EE4-4B5D-831D-09F586E5D9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D450F40-4EE4-4B5D-831D-09F586E5D9E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87C158E0-0229-4B87-9BA8-152E644701E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C158E0-0229-4B87-9BA8-152E644701E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C158E0-0229-4B87-9BA8-152E644701E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C158E0-0229-4B87-9BA8-152E644701E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207504D6-F2FD-41EA-ADB2-89B637EF9D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207504D6-F2FD-41EA-ADB2-89B637EF9D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207504D6-F2FD-41EA-ADB2-89B637EF9D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207504D6-F2FD-41EA-ADB2-89B637EF9D79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
