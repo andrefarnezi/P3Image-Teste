@@ -23,7 +23,7 @@ namespace P3Image_Teste.Administracaoistracao
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-           // NHibernateHelper.CriarTabelasBanco();
+            NHibernateHelper.CriarTabelasBanco();
         }
     }
 }
