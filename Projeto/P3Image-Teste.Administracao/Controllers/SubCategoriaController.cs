@@ -91,7 +91,6 @@ namespace P3Image_Teste.Administracao.Controllers
                                                Text = u.descricao,
                                                Value = u.categoriaId.ToString(),
                                                
-                                               
                                            }).AsEnumerable();
                     ViewBag.ListaDrop = listaCategorias;
                     var subCategorias = session.Get<SubCategoria>(id);

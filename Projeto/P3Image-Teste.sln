@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Infra", "P3Im
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Administracao", "P3Image-Teste.Administracao\P3Image-Teste.Administracao.csproj", "{207504D6-F2FD-41EA-ADB2-89B637EF9D79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Publico", "P3Image-Teste.Publico\P3Image-Teste.Publico.csproj", "{428DE413-CD12-4442-9F80-8416AAD9EB57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{207504D6-F2FD-41EA-ADB2-89B637EF9D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{207504D6-F2FD-41EA-ADB2-89B637EF9D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{207504D6-F2FD-41EA-ADB2-89B637EF9D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428DE413-CD12-4442-9F80-8416AAD9EB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428DE413-CD12-4442-9F80-8416AAD9EB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428DE413-CD12-4442-9F80-8416AAD9EB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428DE413-CD12-4442-9F80-8416AAD9EB57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

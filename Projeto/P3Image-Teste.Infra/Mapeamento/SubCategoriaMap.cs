@@ -15,6 +15,7 @@ namespace P3Image_Teste.Infra.Mapeamento
             Id(x => x.subCategoriaId).GeneratedBy.Identity();
             Map(x => x.descricao).Length(200).Not.Nullable();
             Map(x => x.slug).Length(150).Not.Nullable();
+            HasMany(m => m.campos);
             References(x => x.categoria);
            
         }

@@ -1,0 +1,44 @@
+﻿@model P3Image_Teste.Administracao.Models.SubCatCampos
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Inserir novo Campo [+]", "Inserir", new { id=Model.SubCategoria.subCategoriaId})
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().Ordem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().Tipo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.listaCampos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ordem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoTxt)
+            </td>
+            <td>
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.CampoId }) |
+            @Html.ActionLink("Editar", "Editar", new { id=item.CampoId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.CampoId })
+            </td>
+        </tr>
+}
+
+</table>

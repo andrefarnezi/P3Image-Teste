@@ -48,9 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\GeraCampoHtmlHelper.cs" />
+    <Compile Include="Mapeamento\CamposMap.cs" />
     <Compile Include="Mapeamento\CategoriaMap.cs" />
     <Compile Include="Mapeamento\SubCategoriaMap.cs" />
     <Compile Include="NHibernateHelper.cs" />
+    <Compile Include="Objeto\Campos.cs" />
     <Compile Include="Objeto\Categoria.cs" />
     <Compile Include="Objeto\SubCategoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

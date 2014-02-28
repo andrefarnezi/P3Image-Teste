@@ -135,12 +135,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CamposController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SubCategoriaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Campos.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\GerarSlug.cs" />
     <Compile Include="Models\SubCategoria.cs" />
@@ -241,6 +243,11 @@
     <Content Include="Views\SubCategoria\Excluir.cshtml" />
     <Content Include="Views\SubCategoria\Incluir.cshtml" />
     <Content Include="Views\SubCategoria\Index.cshtml" />
+    <Content Include="Views\Campos\Incluir.cshtml" />
+    <Content Include="Views\Campos\Index.cshtml" />
+    <Content Include="Views\Campos\Editar.cshtml" />
+    <Content Include="Views\Campos\Detalhes.cshtml" />
+    <Content Include="Views\Campos\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

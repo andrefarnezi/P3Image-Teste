@@ -16,6 +16,8 @@ namespace P3Image_Teste.Infra.Objeto
 
         public virtual Categoria categoria { get; set; }
 
+        public virtual IList<Campos> campos { get; set; }
+
       
 
     }
