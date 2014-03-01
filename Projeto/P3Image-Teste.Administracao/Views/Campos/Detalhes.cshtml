@@ -1,4 +1,4 @@
-﻿@model P3Image_Teste.Administracao.Models.Camposteste
+﻿@model P3Image_Teste.Administracao.Models.CamposModel
 
 @{
     ViewBag.Title = "Detalhes";
@@ -45,6 +45,7 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Editar", new {  id=Model.CampoId  }) |
+    @Html.ActionLink("Voltar para listagem", "Index",null, new { id = Model.SubCategoriaId })
+
 </p>

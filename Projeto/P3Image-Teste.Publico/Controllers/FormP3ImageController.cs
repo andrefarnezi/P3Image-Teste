@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using NHibernate;
 using NHibernate.Linq;
+using P3Image_Teste.Administracao.Models;
 
 namespace P3Image_Teste.Publico.Controllers
 {
@@ -25,26 +26,35 @@ namespace P3Image_Teste.Publico.Controllers
             using (var session = NHibernateHelper.OpenSession())
             {
                 var model = new FormP3imageModel();
-                var Registro = session.Query<Campos>().ToList().Where(x => x.subCategoria.categoria.slug == slugCategoria && x.subCategoria.slug ==  slugSubCategoria);
+                var Registro = session.Query<Campos>().ToList().Where(x => x.subCategoria.categoria.slug == slugCategoria && x.subCategoria.slug == slugSubCategoria);
 
-
-                model.Categoria = new Administracao.Models.Categoria {
-                    categoriaId = Registro.FirstOrDefault().subCategoria.categoria.categoriaId,
-                    descricao = Registro.FirstOrDefault().subCategoria.categoria.descricao,
+                if (Registro.Count() != 0)
+                {
+                    model.Categoria = new CategoriaModel
+                    {
+                        categoriaId = Registro.FirstOrDefault().subCategoria.categoria.categoriaId,
+                        descricao = Registro.FirstOrDefault().subCategoria.categoria.descricao,
                     };
-                model.Subcategoria = new Administracao.Models.SubCategoria
+                    model.Subcategoria = new SubCategoriaModel
+                    {
+                        subCategoriaId = Registro.FirstOrDefault().subCategoria.subCategoriaId,
+                        descricao = Registro.FirstOrDefault().subCategoria.descricao,
+                    };
+                    model.Campos = Registro.Select(x => new Administracao.Models.CamposModel
+                    {
+                        Descricao = x.descricao,
+                        Lista = x.lista,
+                        Tipo = x.tipo,
+                        Ordem = x.ordem
+                    }).ToList();
+                    return View(model);
+
+                }
+
+                else
                 {
-                    subCategoriaId = Registro.FirstOrDefault().subCategoria.subCategoriaId,
-                    descricao = Registro.FirstOrDefault().subCategoria.descricao,
-                };
-                model.Campos = Registro.Select(x => new Administracao.Models.Camposteste
-                {
-                    Descricao = x.descricao,
-                    Lista = x.lista,
-                    Tipo = x.tipo,
-                    Ordem = x.ordem
-                }).ToList();
-                return View(model);
+                    return View();
+                }
             }
         }
     }

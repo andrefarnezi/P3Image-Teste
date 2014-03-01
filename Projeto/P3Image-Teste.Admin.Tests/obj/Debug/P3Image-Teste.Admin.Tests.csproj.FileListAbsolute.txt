@@ -50,6 +50,5 @@ C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Test
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Admin.Tests\bin\Debug\System.Web.WebPages.xml
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Admin.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Admin.Tests\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Admin.Tests\obj\Debug\P3Image-Teste.Admin.Tests.csprojResolveAssemblyReference.cache
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Admin.Tests\obj\Debug\P3Image-Teste.Admin.Tests.dll
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Admin.Tests\obj\Debug\P3Image-Teste.Admin.Tests.pdb

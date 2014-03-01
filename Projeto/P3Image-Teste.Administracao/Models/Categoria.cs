@@ -6,7 +6,7 @@ using System.Web;
 
 namespace P3Image_Teste.Administracao.Models
 {
-    public class Categoria
+    public class CategoriaModel
     {
         [Display(Name = "Id")]
         public virtual int categoriaId { get; set; }

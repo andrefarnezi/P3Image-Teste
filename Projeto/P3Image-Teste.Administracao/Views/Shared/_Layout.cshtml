@@ -8,6 +8,11 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+     <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Categoria", "Index", "Categoria")</li>
+                        <li>@Html.ActionLink("Subcategoria", "Index", "Subcategoria")</li>
+                    </ul>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")

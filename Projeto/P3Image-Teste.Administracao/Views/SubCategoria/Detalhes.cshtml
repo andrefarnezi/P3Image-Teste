@@ -1,4 +1,4 @@
-﻿@model P3Image_Teste.Administracao.Models.SubCategoria
+﻿@model P3Image_Teste.Administracao.Models.SubCategoriaModel
 
 @{
     ViewBag.Title = "Detalhes";
@@ -7,13 +7,19 @@
 <h2>Detalhes</h2>
 
 <fieldset>
-    <legend>SubCategoria</legend>
-
-        <div class="display-label">
+    <legend>SubCategoriaModel</legend>
+    
+    <div class="display-label">
          @Html.DisplayNameFor(model => model.categoria.descricao)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.categoria.descricao)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.subCategoriaId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.subCategoriaId)
     </div>
 
     <div class="display-label">
@@ -29,8 +35,10 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.slug)
     </div>
+
+    
 </fieldset>
 <p>
     @Html.ActionLink("Editar", "Editar", new { id=Model.subCategoriaId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para listagem", "Index")
 </p>

@@ -144,7 +144,6 @@
     </Compile>
     <Compile Include="Models\Campos.cs" />
     <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\GerarSlug.cs" />
     <Compile Include="Models\SubCategoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -238,9 +237,7 @@
     <Content Include="Views\Categoria\Incluir.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\SubCategoria\Detalhes.cshtml" />
     <Content Include="Views\SubCategoria\Editar.cshtml" />
-    <Content Include="Views\SubCategoria\Excluir.cshtml" />
     <Content Include="Views\SubCategoria\Incluir.cshtml" />
     <Content Include="Views\SubCategoria\Index.cshtml" />
     <Content Include="Views\Campos\Incluir.cshtml" />
@@ -248,6 +245,7 @@
     <Content Include="Views\Campos\Editar.cshtml" />
     <Content Include="Views\Campos\Detalhes.cshtml" />
     <Content Include="Views\Campos\Excluir.cshtml" />
+    <Content Include="Views\SubCategoria\Detalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

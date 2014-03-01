@@ -5,12 +5,14 @@
     ViewBag.Title = "Formulario";
 }
 
-
+ @if (Model != null)
+    {
     <h2><b>Categoria:</b> @Model.Categoria.descricao</h2>
     <h2><b>Subcategoria:</b> @Model.Subcategoria.descricao</h2>
     <h3>Formulário</h3>
+   
     <table id="formulario">
-
+        
         @foreach (var item in Model.Campos)
         {
             <tr>
@@ -18,7 +20,7 @@
                     @Html.Label(@item.Descricao)
                 </td>
                 <td>
-                    @Html.Raw(GeraCampoHtmlHelper.GerarCampo(item.Tipo, item.CampoId, item.Descricao, item.Lista))
+                    @Html.Raw(GerarHtml.GerarCampoHTML(item.Tipo, item.CampoId, item.Lista))
                 </td>
             </tr>
         }
@@ -26,5 +28,5 @@
         <tr><td><input type="submit" value="Salvar" /></td></tr>
 
     </table> 
-
+    }
 

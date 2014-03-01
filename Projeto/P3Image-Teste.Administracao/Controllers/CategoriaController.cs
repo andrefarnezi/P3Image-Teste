@@ -5,10 +5,13 @@ using NHibernate;
 using NHibernate.Linq;
 using System.Linq;
 using System.Collections.Generic;
+using P3Image_Teste.Administracao.Models;
+using P3Image_Teste.Infra.Helper;
 namespace P3Image_Teste.Administracao.Controllers
 {
     public class CategoriaController : Controller
     {
+        #region Index
         public ActionResult Index()
         {
             using (var session = NHibernateHelper.OpenSession())
@@ -16,7 +19,7 @@ namespace P3Image_Teste.Administracao.Controllers
                 using (var transaction = session.BeginTransaction())
                 {
                     var categorias = session.Query<Categoria>().ToList();
-                    return View(categorias.Select(item => new Models.Categoria
+                    return View(categorias.Select(item => new CategoriaModel
                     {
                         categoriaId = item.categoriaId,
                         descricao = item.descricao,
@@ -28,6 +31,9 @@ namespace P3Image_Teste.Administracao.Controllers
                 }
             }
         }
+        #endregion 
+
+        #region Detalhes
         public ActionResult Detalhes(int id)
         {
             using (var session = NHibernateHelper.OpenSession())
@@ -35,7 +41,7 @@ namespace P3Image_Teste.Administracao.Controllers
                 using (var transaction = session.BeginTransaction())
                 {
                     var categoria = session.Get<Categoria>(id);
-                    Models.Categoria categoriaDetalhe = new Models.Categoria();
+                    CategoriaModel categoriaDetalhe = new CategoriaModel();
                     categoriaDetalhe.categoriaId = categoria.categoriaId;
                     categoriaDetalhe.descricao = categoria.descricao;
                     categoriaDetalhe.slug = categoria.slug;
@@ -44,6 +50,42 @@ namespace P3Image_Teste.Administracao.Controllers
             }
 
         }
+        #endregion
+
+        #region Incluir
+        public ActionResult Incluir()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Incluir(Categoria cat)
+        {
+            try
+            {
+                using (var session = NHibernateHelper.OpenSession())
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                        Categoria categoriaNova = new Categoria();
+                        categoriaNova.descricao = cat.descricao;
+                        categoriaNova.slug = GerarSlug.GerarSlugTexto(cat.descricao);
+
+                        session.SaveOrUpdate(categoriaNova);
+                        transaction.Commit();
+                    }
+                    return RedirectToAction("Index");
+                }
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
+        #endregion
+
+        #region Editar
         public ActionResult Editar(int id)
         {
             using (var session = NHibernateHelper.OpenSession())
@@ -51,7 +93,7 @@ namespace P3Image_Teste.Administracao.Controllers
                 using (var transaction = session.BeginTransaction())
                 {
                     var categoria = session.Get<Categoria>(id);
-                    Models.Categoria categoriaDetalhe = new Models.Categoria();
+                    CategoriaModel categoriaDetalhe = new CategoriaModel();
                     categoriaDetalhe.categoriaId = categoria.categoriaId;
                     categoriaDetalhe.descricao = categoria.descricao;
                     categoriaDetalhe.slug = categoria.slug;
@@ -61,28 +103,7 @@ namespace P3Image_Teste.Administracao.Controllers
 
         }
 
-        public ActionResult Excluir(int id)
-        {
-            using (var session = NHibernateHelper.OpenSession())
-            {
-                using (var transaction = session.BeginTransaction())
-                {
-                    var categoria = session.Get<Categoria>(id);
-                    Models.Categoria categoriaDetalhe = new Models.Categoria();
-                    categoriaDetalhe.categoriaId = categoria.categoriaId;
-                    categoriaDetalhe.descricao = categoria.descricao;
-                    categoriaDetalhe.slug = categoria.slug;
-                    return View(categoriaDetalhe);
-                }
-            }
 
-        }
-        public ActionResult Incluir()
-        {
-                    return View();
-        }
-
-       
         [HttpPost]
         public ActionResult Editar(int id, Categoria cat)
         {
@@ -92,7 +113,6 @@ namespace P3Image_Teste.Administracao.Controllers
                 {
                     using (var transaction = session.BeginTransaction())
                     {
-                        Models.GerarSlug GerarSlug = new Models.GerarSlug();
                         var CategoriaEditar = session.Get<Categoria>(id);
                         CategoriaEditar.descricao = cat.descricao;
                         CategoriaEditar.slug = GerarSlug.GerarSlugTexto(cat.descricao);
@@ -107,6 +127,25 @@ namespace P3Image_Teste.Administracao.Controllers
             {
                 return View();
 
+            }
+
+        }
+        #endregion
+
+        #region Excluir
+        public ActionResult Excluir(int id)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var categoria = session.Get<Categoria>(id);
+                    CategoriaModel categoriaDetalhe = new CategoriaModel();
+                    categoriaDetalhe.categoriaId = categoria.categoriaId;
+                    categoriaDetalhe.descricao = categoria.descricao;
+                    categoriaDetalhe.slug = categoria.slug;
+                    return View(categoriaDetalhe);
+                }
             }
 
         }
@@ -134,35 +173,8 @@ namespace P3Image_Teste.Administracao.Controllers
             }
 
         }
+        #endregion
 
-        [HttpPost]
-        public ActionResult Incluir(Categoria cat)
-        {
-            try
-            {
-                using (var session = NHibernateHelper.OpenSession())
-                {
-                    using (var transaction = session.BeginTransaction())
-                    {
-                        Models.GerarSlug GerarSlug = new Models.GerarSlug();
-                        Categoria categoriaNova = new Categoria();
-                        categoriaNova.descricao = cat.descricao;
-                        categoriaNova.slug = GerarSlug.GerarSlugTexto(cat.descricao);
-
-                        session.SaveOrUpdate(categoriaNova);
-                        transaction.Commit();
-                    }
-                    return RedirectToAction("Index");
-                }
-            }
-            catch
-            {
-                return View();
-            }
-
-        }
     }
-
-
 }
 

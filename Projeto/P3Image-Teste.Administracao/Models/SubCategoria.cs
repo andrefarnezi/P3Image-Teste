@@ -6,7 +6,7 @@ using System.Web;
 
 namespace P3Image_Teste.Administracao.Models
 {
-    public class SubCategoria
+    public class SubCategoriaModel
     {
         [Required]
         public virtual int subCategoriaId { get; set; }
@@ -22,7 +22,7 @@ namespace P3Image_Teste.Administracao.Models
         public virtual int CategoriaId { get; set; }
 
         [Required]
-        public virtual Categoria categoria { get; set; }
+        public virtual CategoriaModel categoria { get; set; }
 
     }
 }

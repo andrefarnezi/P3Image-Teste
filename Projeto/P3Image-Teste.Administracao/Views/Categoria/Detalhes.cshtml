@@ -1,4 +1,4 @@
-﻿@model P3Image_Teste.Administracao.Models.Categoria
+﻿@model P3Image_Teste.Administracao.Models.CategoriaModel
 
 @{
     ViewBag.Title = "Detalhes";
@@ -24,6 +24,7 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.categoriaId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Editar", new { id=Model.categoriaId }) |
+       @Html.ActionLink("Voltar para listagem", "Index")
+
 </p>

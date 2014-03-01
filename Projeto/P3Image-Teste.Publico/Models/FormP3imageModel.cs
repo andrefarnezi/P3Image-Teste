@@ -10,13 +10,13 @@ namespace P3Image_Teste.Publico.Models
     public class FormP3imageModel
     {
         [Display(Name = "Categoria")]
-        public virtual Categoria Categoria { get; set; }
+        public virtual CategoriaModel Categoria { get; set; }
 
         [Display(Name = "Subcategoria")]
-        public virtual SubCategoria Subcategoria { get; set; }
+        public virtual SubCategoriaModel Subcategoria { get; set; }
 
         [Display(Name = "Campos")]
-        public virtual List<Camposteste> Campos { get; set; }
+        public virtual List<CamposModel> Campos { get; set; }
 
         public virtual bool TemRegistros { get; set; }
     }

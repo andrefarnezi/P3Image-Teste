@@ -13,9 +13,7 @@ namespace P3Image_Teste.Administracao.Controllers
 {
     public class CamposController : Controller
     {
-        //
-        // GET: /Campos/
-
+        #region Index
         public ActionResult Index(int id)
         {
             using (var session = NHibernateHelper.OpenSession())
@@ -24,28 +22,47 @@ namespace P3Image_Teste.Administracao.Controllers
                 {
                     var campos = session.Query<Campos>().Where(x => x.subCategoria.subCategoriaId == id ).ToList();
 
-                    var teste = campos.Select(item => new Models.Camposteste
+                    var teste = campos.Select(item => new Models.CamposModel
                     {
                         CampoId = item.campoId,
                         Descricao = item.descricao,
                         TipoTxt = Enum.GetName(typeof(TiposCamposEnum), item.tipo),
                         Lista = item.lista,
                         Ordem = item.ordem,
-                        SubCategoria = new Models.SubCategoria { subCategoriaId = item.subCategoria.subCategoriaId, descricao = item.subCategoria.descricao, slug = item.subCategoria.slug }
+                        SubCategoria = new SubCategoriaModel { subCategoriaId = item.subCategoria.subCategoriaId, descricao = item.subCategoria.descricao, slug = item.subCategoria.slug }
 
                     }).ToList();
                     var subCat = session.Get<Infra.Objeto.SubCategoria>(id);
                     SubCatCampos retorno = new SubCatCampos();
                     retorno.listaCampos = teste.ToList();
-                    retorno.SubCategoria = new Models.SubCategoria { subCategoriaId = subCat.subCategoriaId, descricao = subCat.descricao, slug = subCat.slug };
+                    retorno.SubCategoria = new SubCategoriaModel { subCategoriaId = subCat.subCategoriaId, descricao = subCat.descricao, slug = subCat.slug };
                     return View(retorno);
                 }
             }
         }
+        #endregion
 
+        #region Detalhes
+        public ActionResult Detalhes(int id)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                var campo = session.Get<Campos>(id);
+                CamposModel subCategoriasEditar = new CamposModel();
+                subCategoriasEditar.Descricao = campo.descricao;
+                subCategoriasEditar.Ordem = campo.ordem;
+                subCategoriasEditar.TipoTxt = Enum.GetName(typeof(TiposCamposEnum), campo.tipo);
+                subCategoriasEditar.Lista = campo.lista;
+                subCategoriasEditar.SubCategoria = new SubCategoriaModel { subCategoriaId = campo.subCategoria.subCategoriaId, descricao = campo.subCategoria.descricao, slug = campo.subCategoria.slug };
+                return View(subCategoriasEditar);
+            }
+        }
+        #endregion
+
+        #region Incluir
         public ActionResult Incluir(int id)
         {
-            Camposteste model = new Camposteste();
+            CamposModel model = new CamposModel();
             model.SubCategoriaId = id;
             model.TipoItens = Enum.GetValues(typeof(TiposCamposEnum)).Cast<TiposCamposEnum>().Select(o => new SelectListItem
             {
@@ -56,57 +73,9 @@ namespace P3Image_Teste.Administracao.Controllers
             return View(model);
         }
 
-        public ActionResult Editar(int id)
-        {
-            using (var session = NHibernateHelper.OpenSession())
-            {
-                var campo = session.Get<Campos>(id);
-                Models.Camposteste subCategoriasEditar= new Models.Camposteste();
-                subCategoriasEditar.Descricao = campo.descricao;
-                subCategoriasEditar.Tipo = campo.tipo;
-                subCategoriasEditar.TipoItens = Enum.GetValues(typeof(TiposCamposEnum)).Cast<TiposCamposEnum>().Select(o => new SelectListItem
-                {
-                    Text = o.ToString(),
-                    Value = ((int)o).ToString()
-                }).ToList();
-                subCategoriasEditar.Lista = campo.lista;
-                subCategoriasEditar.SubCategoriaId = campo.subCategoria.subCategoriaId;
-                return View(subCategoriasEditar);
-            }
-        }
-
-        public ActionResult Detalhes(int id)
-        {
-            using (var session = NHibernateHelper.OpenSession())
-            {
-                var campo = session.Get<Campos>(id);
-                Models.Camposteste subCategoriasEditar = new Models.Camposteste();
-                subCategoriasEditar.Descricao = campo.descricao;
-                subCategoriasEditar.Ordem = campo.ordem;
-                subCategoriasEditar.TipoTxt = Enum.GetName(typeof(TiposCamposEnum), campo.tipo);
-                subCategoriasEditar.Lista = campo.lista;
-                subCategoriasEditar.SubCategoria = new Models.SubCategoria { subCategoriaId = campo.subCategoria.subCategoriaId, descricao = campo.subCategoria.descricao, slug = campo.subCategoria.slug };
-                return View(subCategoriasEditar);
-            }
-        }
-
-        public ActionResult Excluir(int id)
-        {
-            using (var session = NHibernateHelper.OpenSession())
-            {
-                var campo = session.Get<Campos>(id);
-                Models.Camposteste subCategoriasEditar = new Models.Camposteste();
-                subCategoriasEditar.Descricao = campo.descricao;
-                subCategoriasEditar.Ordem = campo.ordem;
-                subCategoriasEditar.TipoTxt = Enum.GetName(typeof(TiposCamposEnum), campo.tipo);
-                subCategoriasEditar.Lista = campo.lista;
-                subCategoriasEditar.SubCategoriaId = campo.subCategoria.subCategoriaId;
-                return View(subCategoriasEditar);
-            }
-        }
 
         [HttpPost]
-        public ActionResult Incluir(Models.Camposteste campos)
+        public ActionResult Incluir(CamposModel campos)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -123,10 +92,33 @@ namespace P3Image_Teste.Administracao.Controllers
                 }
                 return RedirectToAction("Index", new { id = campos.SubCategoriaId });
             }
-        
+
         }
+        #endregion
+
+        #region Editar
+        public ActionResult Editar(int id)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                var campo = session.Get<Campos>(id);
+                CamposModel subCategoriasEditar= new CamposModel();
+                subCategoriasEditar.Descricao = campo.descricao;
+                subCategoriasEditar.Tipo = campo.tipo;
+                subCategoriasEditar.TipoItens = Enum.GetValues(typeof(TiposCamposEnum)).Cast<TiposCamposEnum>().Select(o => new SelectListItem
+                {
+                    Text = o.ToString(),
+                    Value = ((int)o).ToString()
+                }).ToList();
+                subCategoriasEditar.Lista = campo.lista;
+                subCategoriasEditar.SubCategoriaId = campo.subCategoria.subCategoriaId;
+                return View(subCategoriasEditar);
+            }
+        }
+
+
         [HttpPost]
-        public ActionResult Editar(int id, Models.Camposteste campos)
+        public ActionResult Editar(int id, CamposModel campos)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -143,9 +135,26 @@ namespace P3Image_Teste.Administracao.Controllers
             }
 
         }
+        #endregion
+
+        #region Excluir
+        public ActionResult Excluir(int id)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                var campo = session.Get<Campos>(id);
+                CamposModel subCategoriasEditar = new CamposModel();
+                subCategoriasEditar.Descricao = campo.descricao;
+                subCategoriasEditar.Ordem = campo.ordem;
+                subCategoriasEditar.TipoTxt = Enum.GetName(typeof(TiposCamposEnum), campo.tipo);
+                subCategoriasEditar.Lista = campo.lista;
+                subCategoriasEditar.SubCategoriaId = campo.subCategoria.subCategoriaId;
+                return View(subCategoriasEditar);
+            }
+        }
 
         [HttpPost]
-        public ActionResult Excluir(int id, Models.Camposteste campos)
+        public ActionResult Excluir(int id, CamposModel campos)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -159,5 +168,6 @@ namespace P3Image_Teste.Administracao.Controllers
             }
 
         }
+        #endregion
     }
 }

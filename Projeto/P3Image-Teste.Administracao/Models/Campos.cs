@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace P3Image_Teste.Administracao.Models
 {
-    public class Camposteste
+    public class CamposModel
     {
         [Display(Name = "Id")]
         public virtual int CampoId { get; set; }
@@ -36,14 +36,14 @@ namespace P3Image_Teste.Administracao.Models
         public virtual int Ordem { get; set; }
 
         [Display(Name = "Subcategoria")]
-        public virtual SubCategoria SubCategoria { get; set; }
+        public virtual SubCategoriaModel SubCategoria { get; set; }
 
         public virtual List<SelectListItem> TipoItens { get; set; } // dropdown
     }
     public class SubCatCampos
     {
-        public List<Camposteste> listaCampos { get; set; }
-        public SubCategoria SubCategoria { get; set; }
+        public List<CamposModel> listaCampos { get; set; }
+        public SubCategoriaModel SubCategoria { get; set; }
     }
 
     public enum TiposCamposEnum

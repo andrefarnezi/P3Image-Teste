@@ -6,11 +6,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace P3Image_Teste.Administracao.Models
+namespace P3Image_Teste.Infra.Helper
 {
-    public class GerarSlug
+    public static class GerarSlug
     {
-        public string GerarSlugTexto(string texto)
+        public static string GerarSlugTexto(string texto)
         {
             String Valor = texto.Normalize(NormalizationForm.FormD).Trim();
             StringBuilder builder = new StringBuilder();

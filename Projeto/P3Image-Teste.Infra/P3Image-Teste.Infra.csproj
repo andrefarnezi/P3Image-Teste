@@ -48,7 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helper\GeraCampoHtmlHelper.cs" />
+    <Compile Include="Helper\GerarHtml.cs" />
+    <Compile Include="Helper\GerarSlug.cs" />
     <Compile Include="Mapeamento\CamposMap.cs" />
     <Compile Include="Mapeamento\CategoriaMap.cs" />
     <Compile Include="Mapeamento\SubCategoriaMap.cs" />
