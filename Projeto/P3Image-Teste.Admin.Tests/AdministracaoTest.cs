@@ -10,7 +10,7 @@ using P3Image_Teste.Infra.Objeto;
 using P3Image_Teste.Infra.Helper;
 using P3Image_Teste.Infra;
 
-namespace P3Image_Teste.Admin.Tests
+namespace P3Image_Teste.Administracao.Tests
 {
     [TestClass]
     public class AdministracaoTest
