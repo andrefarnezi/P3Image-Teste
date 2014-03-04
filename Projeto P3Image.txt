@@ -1,0 +1,11 @@
+Projeto feito por: André Farnezi Resende
+
+A criação das tabelas podem ser feitas por 2 formas: 
+
+Rodar os scripts (Script-Criacao-Tabelas.sql)
+
+ou
+
+rodar o Projeto (CriarTabelasBanco)
+
+
