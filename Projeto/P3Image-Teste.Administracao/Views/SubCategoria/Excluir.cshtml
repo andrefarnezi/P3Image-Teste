@@ -1,0 +1,42 @@
+﻿@model P3Image_Teste.Administracao.Models.SubCategoriaModel
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você deseja excluir este registro ?</h3>
+<fieldset>
+    <legend>SubCategoria</legend>
+
+  <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.categoria.descricao)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categoria.descricao)
+    </div>
+ 
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.descricao)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descricao)
+    </div>
+
+    <div class="display-label">
+         <b> @Html.DisplayNameFor(model => model.slug)</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.slug)
+    </div>
+
+    
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar para Listagem", "Index")
+    </p>
+}

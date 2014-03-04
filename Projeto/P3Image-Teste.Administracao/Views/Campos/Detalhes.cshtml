@@ -7,45 +7,48 @@
 <h2>Detalhes</h2>
 
 <fieldset>
-    <legend>Camposteste</legend>
-
+    <legend>Campos</legend>
     <div class="display-label">
          @Html.DisplayName("Subcategoria")
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SubCategoria.descricao)
+        @Html.DisplayFor(model => model.subCategoria.descricao)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Ordem)
+         @Html.DisplayNameFor(model => model.ordenacao)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Ordem)
+        @Html.DisplayFor(model => model.ordenacao)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Descricao)
+         @Html.DisplayNameFor(model => model.descricao)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Descricao)
+        @Html.DisplayFor(model => model.descricao)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Tipo)
+         @Html.DisplayNameFor(model => model.tipo)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.TipoTxt)
+    <div id="divTipo">
+        @Html.DisplayFor(model => model.tipoTexto)</div>
     </div>
-
+    <div id="divListagem">
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Lista)
+         @Html.DisplayNameFor(model => model.listacheckDrop)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Lista)
+        @Html.DisplayFor(model => model.listacheckDrop)
     </div>
+        </div>
 </fieldset>
+    
 <p>
-    @Html.ActionLink("Editar", "Editar", new {  id=Model.CampoId  }) |
-    @Html.ActionLink("Voltar para listagem", "Index",null, new { id = Model.SubCategoriaId })
+    @Html.ActionLink("Editar", "Editar", new {  id=Model.campoId  }) |
+      @Html.ActionLink("Voltar para listagem", "Index", new { Id=Model.subCategoria.subCategoriaId })
+
 
 </p>

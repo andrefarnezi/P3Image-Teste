@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<P3Image_Teste.Administracao.Models.SubCategoriaModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SubCategoria";
 }
 
-<h2>Index</h2>
+<h2>SubCategorias</h2>
 
 <p>
     @Html.ActionLink("Incluir Nova SubCategoria", "Incluir")
@@ -37,7 +37,7 @@
         <td>
             @Html.ActionLink("Detalhes", "Detalhes", new { id=item.subCategoriaId }) |
             @Html.ActionLink("Editar", "Editar", new { id=item.subCategoriaId }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.subCategoriaId })|
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.subCategoriaId }) | 
             @Html.ActionLink("Administrar Campos", "Index","Campos", new { id=item.subCategoriaId },null) 
         </td>
     </tr>

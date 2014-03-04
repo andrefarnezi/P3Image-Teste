@@ -1,14 +1,3 @@
-USE [master]
-GO
-
-CREATE DATABASE [P3ImageTeste] ON  PRIMARY 
-( 
-    NAME = N'P3ImageTeste', 
-    FILENAME = N'D:\teste\P3Image-teste\P3ImageTeste.mdf' ,			--local data path
-    SIZE = 8000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB 
-)
-GO
-
 USE[P3ImageTeste]
 
 CREATE TABLE [dbo].[Categoria](
@@ -46,7 +35,7 @@ GO
 CREATE TABLE [dbo].[Campos](
 	[campoId] [int] IDENTITY(1,1) NOT NULL,
 	[descricao] [nvarchar](200) NOT NULL,
-	[lista] [nvarchar](200) NOT NULL,
+	[lista] [nvarchar](200) NULL,
 	[tipo] [int] NOT NULL,
 	[ordem] [int] NOT NULL,
 	[subCategoria_id] [int] NULL,

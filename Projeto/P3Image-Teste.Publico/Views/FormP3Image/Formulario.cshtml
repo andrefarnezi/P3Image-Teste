@@ -17,10 +17,10 @@
         {
             <tr>
                 <td>
-                    @Html.Label(@item.Descricao)
+                    @Html.Label(item.descricao)
                 </td>
                 <td>
-                    @Html.Raw(GerarHtml.GerarCampoHTML(item.Tipo, item.CampoId, item.Lista))
+                    @Html.Raw(GerarHtml.GerarCampoHTML(item.tipo, item.campoId, item.listacheckDrop))
                 </td>
             </tr>
         }
@@ -29,4 +29,8 @@
 
     </table> 
     }
+else
+{
+    <h3>Favor digitar a rota {slugCategoria}/{slugSubcategoria} corretamente.</h3>
+}
 

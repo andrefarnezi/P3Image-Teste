@@ -1,23 +1,23 @@
-﻿@model P3Image_Teste.Administracao.Models.SubCatCampos
+﻿@model P3Image_Teste.Administracao.Models.SubCategoriaCampos
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Campos";
 }
 
-<h2>Index</h2>
+<h2>Campos - @Model.SubCategoria.descricao</h2>
 <p>
     @Html.ActionLink("Incluir novo Campo", "Incluir", new { id=Model.SubCategoria.subCategoriaId})
 </p>
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().Ordem)
+            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().ordenacao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().Descricao)
+            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().descricao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().Tipo)
+            @Html.DisplayNameFor(model => model.listaCampos.FirstOrDefault().tipo)
         </th>
         <th></th>
     </tr>
@@ -25,18 +25,18 @@
     @foreach (var item in Model.listaCampos) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Ordem)
+                @Html.DisplayFor(modelItem => item.ordenacao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
+                @Html.DisplayFor(modelItem => item.descricao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoTxt)
+                @Html.DisplayFor(modelItem => item.tipoTexto)
             </td>
             <td>
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.CampoId }) |
-            @Html.ActionLink("Editar", "Editar", new { id=item.CampoId }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.CampoId })
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.campoId }) |
+            @Html.ActionLink("Editar", "Editar", new { id=item.campoId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.campoId })
             </td>
         </tr>
 }

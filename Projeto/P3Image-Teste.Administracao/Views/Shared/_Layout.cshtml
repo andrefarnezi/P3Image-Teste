@@ -6,13 +6,19 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
-     <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Categoria", "Index", "Categoria")</li>
-                        <li>@Html.ActionLink("Subcategoria", "Index", "Subcategoria")</li>
-                    </ul>
+    <div id="logo" style="text-align:center">
+     <img src="~/Content/imagens/p3image.jpg" style="width: 350px;" />
+    </div>
+    <div id="menucontainer">
+        <div id="menu">
+            @Html.ActionLink("Home", "Index", "Home") | 
+            @Html.ActionLink("Categoria", "Index", "Categoria") | 
+            @Html.ActionLink("Subcategoria", "Index", "Subcategoria")
+        </div>
+    </div>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")

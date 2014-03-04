@@ -40,12 +40,12 @@ namespace P3Image_Teste.Publico.Controllers
                         subCategoriaId = Registro.FirstOrDefault().subCategoria.subCategoriaId,
                         descricao = Registro.FirstOrDefault().subCategoria.descricao,
                     };
-                    model.Campos = Registro.Select(x => new Administracao.Models.CamposModel
+                    model.Campos = Registro.Select(x => new CamposModel
                     {
-                        Descricao = x.descricao,
-                        Lista = x.lista,
-                        Tipo = x.tipo,
-                        Ordem = x.ordem
+                        descricao = x.descricao,
+                        listacheckDrop = x.lista,
+                        tipo = x.tipo,
+                        ordenacao = x.ordem
                     }).ToList();
                     return View(model);
 

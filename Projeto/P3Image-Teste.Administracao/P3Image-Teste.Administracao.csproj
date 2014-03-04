@@ -246,9 +246,11 @@
     <Content Include="Views\Campos\Detalhes.cshtml" />
     <Content Include="Views\Campos\Excluir.cshtml" />
     <Content Include="Views\SubCategoria\Detalhes.cshtml" />
+    <Content Include="Views\SubCategoria\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Imagens\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

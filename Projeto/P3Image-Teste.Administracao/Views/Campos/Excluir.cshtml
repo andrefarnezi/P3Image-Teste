@@ -6,49 +6,50 @@
 
 <h2>Excluir</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Você deseja excluir este registro?</h3>
 <fieldset>
-    <legend>Camposteste</legend>
+    <legend>Campos</legend>
      <div class="display-label">
          @Html.DisplayName("Subcategoria")
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SubCategoria.descricao)
+        @Html.DisplayFor(model => model.subCategoria.descricao)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Ordem)
+         @Html.DisplayNameFor(model => model.ordenacao)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Ordem)
+        @Html.DisplayFor(model => model.ordenacao)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Descricao)
+         @Html.DisplayNameFor(model => model.descricao)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Descricao)
+        @Html.DisplayFor(model => model.descricao)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Tipo)
+         @Html.DisplayNameFor(model => model.tipo)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.TipoTxt)
+        @Html.DisplayFor(model => model.tipoTexto)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Lista)
+         @Html.DisplayNameFor(model => model.listacheckDrop)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Lista)
+        @Html.DisplayFor(model => model.listacheckDrop)
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(X => X.SubCategoriaId)
+    @Html.HiddenFor(X => X.subCategoriaId)
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar para listagem", "Index", new { Id=Model.subCategoriaId })
+
     </p>
 }

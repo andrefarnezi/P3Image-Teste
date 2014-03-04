@@ -34,7 +34,13 @@ textarea {
 .editor-field {
     margin: 0.5em 0 0 0;
 }
+.display-label {
+    font-weight:bold;
+}
+.editor-label {
+    font-weight:bold;
 
+}
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/

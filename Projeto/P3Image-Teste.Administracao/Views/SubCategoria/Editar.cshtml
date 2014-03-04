@@ -16,14 +16,14 @@
         @Html.HiddenFor(model => model.subCategoriaId)
 
         <div class="editor-label">
-               @Html.LabelFor(model => model.CategoriaId)
+             <b>  @Html.LabelFor(model => model.CategoriaId)</b>
         </div>
         <div class="editor-field">
               @Html.DropDownListFor(m => m.categoria.categoriaId, (IEnumerable<SelectListItem>)ViewBag.ListaDrop)
             @Html.ValidationMessageFor(model => model.categoria.categoriaId)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.descricao)
+            <b>@Html.LabelFor(model => model.descricao)</b>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.descricao)
@@ -34,13 +34,13 @@
        
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Salvar  " />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para listagem", "Index")
 </div>
 
 @section Scripts {

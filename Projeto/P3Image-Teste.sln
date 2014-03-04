@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Admin.Tests", "P3Image-Teste.Admin.Tests\P3Image-Teste.Admin.Tests.csproj", "{3D450F40-4EE4-4B5D-831D-09F586E5D9E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Administracao.Tests", "P3Image-Teste.Admin.Tests\P3Image-Teste.Administracao.Tests.csproj", "{3D450F40-4EE4-4B5D-831D-09F586E5D9E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Infra", "P3Image-Teste.Infra\P3Image-Teste.Infra.csproj", "{87C158E0-0229-4B87-9BA8-152E644701E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Administracao", "P3Image-Teste.Administracao\P3Image-Teste.Administracao.csproj", "{207504D6-F2FD-41EA-ADB2-89B637EF9D79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3Image-Teste.Publico", "P3Image-Teste.Publico\P3Image-Teste.Publico.csproj", "{428DE413-CD12-4442-9F80-8416AAD9EB57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriarTabelasBanco", "CriarTabelasBanco\CriarTabelasBanco.csproj", "{6DCAE896-F2B0-4373-97CE-2A383C108D53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{428DE413-CD12-4442-9F80-8416AAD9EB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{428DE413-CD12-4442-9F80-8416AAD9EB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{428DE413-CD12-4442-9F80-8416AAD9EB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DCAE896-F2B0-4373-97CE-2A383C108D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCAE896-F2B0-4373-97CE-2A383C108D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCAE896-F2B0-4373-97CE-2A383C108D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCAE896-F2B0-4373-97CE-2A383C108D53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

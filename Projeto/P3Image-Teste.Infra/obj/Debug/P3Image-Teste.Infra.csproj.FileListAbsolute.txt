@@ -20,4 +20,3 @@ C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Test
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Infra\bin\Debug\NHibernate.xml
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Infra\obj\Debug\P3Image-Teste.Infra.dll
 C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Infra\obj\Debug\P3Image-Teste.Infra.pdb
-C:\Users\brsolucoes.afresende\Documents\Visual Studio 2012\Projects\P3Image-Teste\P3Image-Teste\Projeto\P3Image-Teste.Infra\obj\Debug\P3Image-Teste.Infra.csprojResolveAssemblyReference.cache

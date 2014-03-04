@@ -24,7 +24,7 @@ namespace P3Image_Teste.Infra.Helper
             byte[] bytes = Encoding.GetEncoding("Cyrillic").GetBytes(texto);
 
             Valor = Regex.Replace(Regex.Replace(Encoding.ASCII.GetString(bytes), @"\s{2,}|[^\w]", " ", RegexOptions.ECMAScript).Trim(), @"\s+", "-");
-            return Valor;
+            return Valor.ToLower();
         }
     }
 }

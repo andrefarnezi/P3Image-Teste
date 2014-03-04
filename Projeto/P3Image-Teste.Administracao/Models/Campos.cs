@@ -10,37 +10,36 @@ namespace P3Image_Teste.Administracao.Models
     public class CamposModel
     {
         [Display(Name = "Id")]
-        public virtual int CampoId { get; set; }
+        public virtual int campoId { get; set; }
 
         [Required]
         [Display(Name = "Descrição")]
-        public virtual string Descricao { get; set; }
+        public virtual string descricao { get; set; }
 
         [Required]
         [Display(Name = "Subcategoria")]
-        public virtual int SubCategoriaId { get; set; }
+        public virtual int subCategoriaId { get; set; }
 
         [Required]
         [Display(Name = "Tipo")]
-        public virtual int Tipo { get; set; }
+        public virtual int tipo { get; set; }
 
         [Display(Name = "Tipo")]
-        public virtual string TipoTxt { get; set; }
+        public virtual string tipoTexto { get; set; }
 
-        [Required]
         [Display(Name = "Lista")]
-        public virtual string Lista { get; set; }
+        public virtual string listacheckDrop { get; set; }
 
         [Required]
         [Display(Name = "Ordem")]
-        public virtual int Ordem { get; set; }
+        public virtual int ordenacao { get; set; }
 
         [Display(Name = "Subcategoria")]
-        public virtual SubCategoriaModel SubCategoria { get; set; }
+        public virtual SubCategoriaModel subCategoria { get; set; }
 
-        public virtual List<SelectListItem> TipoItens { get; set; } // dropdown
+        public virtual List<SelectListItem> tipoItens { get; set; } 
     }
-    public class SubCatCampos
+    public class SubCategoriaCampos
     {
         public List<CamposModel> listaCampos { get; set; }
         public SubCategoriaModel SubCategoria { get; set; }

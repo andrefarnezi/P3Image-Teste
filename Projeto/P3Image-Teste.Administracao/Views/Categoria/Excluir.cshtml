@@ -6,12 +6,12 @@
 
 <h2>Excluir</h2>
 
-<h3>Você deseja deletar este registro?</h3>
+<h3>Você deseja excluir este registro?</h3>
 <fieldset>
     <legend>Categoria</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.categoriaId)
+         @Html.DisplayNameFor(model => model.descricao)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.descricao)
@@ -27,7 +27,7 @@
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     <p>
-        <input type="submit" value="Deletar" /> |
-        @Html.ActionLink("Voltar para Index", "Index")
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar para listagem", "Index")
     </p>
 }

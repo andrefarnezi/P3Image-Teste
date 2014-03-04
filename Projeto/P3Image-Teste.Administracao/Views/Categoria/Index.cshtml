@@ -12,12 +12,17 @@
 <table>
     <tr>
         <th>
-            teste
+                       @Html.DisplayNameFor(model => model.categoriaId)
         </th>
         <th>    
-          teste
+                                 @Html.DisplayNameFor(model => model.descricao)
+
         </th>
-        <th>slug</th>
+        <th>
+                       @Html.DisplayNameFor(model => model.slug)
+
+
+        </th>
         <th></th>
     </tr>
 
@@ -34,7 +39,7 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id = item.categoriaId }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.categoriaId })
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.categoriaId }) |
             @Html.ActionLink("Detalhes", "Detalhes", new { id=item.categoriaId })
         </td>
     </tr>
